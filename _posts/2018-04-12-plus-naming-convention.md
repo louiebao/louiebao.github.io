@@ -1,4 +1,4 @@
-**EDIT:** This is the very first post from my old blog from nearly 10 years ago. As I was reviewing the content, a lot of the arguements still made sense.
+**EDIT:** This is the very first post (nearly 10 years ago) from my old blog. As I was reviewing the content, a lot of the arguements still made sense.
 
 # PLUS naming convention
 

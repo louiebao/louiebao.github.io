@@ -4,4 +4,4 @@
 {% endfor %}
 
 ---
-[You can find all historical posts here]({{ site.baseurl}}/posts)
+[All Posts]({{ site.baseurl}}/posts)

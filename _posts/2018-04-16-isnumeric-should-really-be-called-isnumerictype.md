@@ -252,7 +252,8 @@ from dbo.is_numeric
 
 select * from is_numeric_2
 ```
-Now let's take a look what happens when we mix characters and numbers:
+
+Now let's take a look at the effect after mixing characters and numbers:
 
 | a | b | c | a+b | <- isnumeric | a+b+c | <- isnumeric | b+c | <- isnumeric |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

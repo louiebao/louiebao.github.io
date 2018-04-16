@@ -2,3 +2,6 @@
   {{ post.date | date_to_string }}
   {{ post.content }}
 {% endfor %}
+
+---
+[You can find all historical posts here]({{ site.baseurl}}/posts)

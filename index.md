@@ -2,5 +2,6 @@
   {{ post.date | date_to_string }}
   {{ post.excerpt }}
   [Read More...]({{ post.url }})
+  
   ---
 {% endfor %}

@@ -1,6 +1,6 @@
-**EDIT:** This is the very first post (nearly 10 years ago) from my old blog. As I was reviewing the content, a lot of the arguements still made sense.
-
 # PLUS naming convention
+
+**EDIT:** This is the very first post (nearly 10 years ago) from my old blog. As I was reviewing the content, a lot of the arguements still made sense.
 
 I have always been thinking about the differences between the English and the Chinese language. The Chinese grammar is not as strict or structured as English. The Chinese language emphasizes more on the meaning of the words than the structure of the sentences. 
 

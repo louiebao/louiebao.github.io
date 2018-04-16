@@ -1,6 +1,6 @@
 # How  to include the timestamp in the command prompt
 
-**EDIT:** This is an old post. This trick is later incorporated into the posh-git setup.
+**EDIT:** This is an old post. The trick is later incorporated into the posh-git setup.
 
 I find myself working from the command prompt quite often and I always have the need to capture the screen shots for demonstration or auditing purposes, so it is vital to incorporate the timestamp in the command prompt.
 

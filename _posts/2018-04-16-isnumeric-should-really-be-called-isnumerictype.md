@@ -1,8 +1,8 @@
-**EDIT:** This is an old post but still relevant today. 
-
 # isnumeric() should really be called isnumerictype()
 
-A warning sign in the official documentation says:
+**EDIT:** This is an old post but still relevant today. 
+
+isnumeric() is such a misleading name, the official documentation is filled with warning signs on its usage, for example:
 
 > ISNUMERIC returns 1 for some characters that are not numbers, such as plus (+), minus (-), and valid currency symbols such as the dollar sign ($).
 

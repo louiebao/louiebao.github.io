@@ -4,4 +4,4 @@
 {% endfor %}
 
 ---
-[All Posts]({{ site.baseurl}}/posts)
+[All Posts]({{ "/posts" | relative_url }})

@@ -1,4 +1,6 @@
 ---
 layout: page
-title: Chinese Medicine
 ---
+
+# 中医
+

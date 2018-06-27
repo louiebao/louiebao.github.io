@@ -3,10 +3,6 @@ It is common to see single digit days and months padded with leading zeros. Ther
 **Dumb Way**
 
 ```sql
-select case when day('2009-07-01') < 10 then '0' else '' end + cast(day('2009-07-01') as varchar)
-```
-or
-```sql
 select iif(day('2009-07-01') < 10, '0', '') + cast(day('2009-07-01') as varchar)
 ```
 

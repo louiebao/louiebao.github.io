@@ -140,7 +140,7 @@ select * from dbo.is_numeric
 |39|'|single quote|0|
 |40|(|open bracket|0|
 |41|)|close bracket|0|
-|42|*|multiply/star|0|
+|42|\*|multiply/star|0|
 |43|+|plus|**1**|
 |44|,|comma|**1**|
 |45|-|minus/dash|**1**|
@@ -193,7 +193,7 @@ select * from dbo.is_numeric
 |92|\ |backslash|**1**|
 |93|]|close square bracket|0|
 |94|^|power|0|
-|95|_|underscore|0|
+|95|\_|underscore|0|
 |96|`|apostrophe|0|
 |97|a|a|0|
 |98|b|b|0|
@@ -270,7 +270,7 @@ Now let's take a look at the effect after mixing characters and numbers:
 |1|'|2|1'|0|1'2|0|'2|0|
 |1|(|2|1(|0|1(2|0|(2|0|
 |1|)|2|1)|0|1)2|0|)2|0|
-|1|*|2|1*|0|1*2|0|*2|0|
+|1|\*|2|1\*|0|1\*2|0|\*2|0|
 |1|+|2|1+|0|1+2|0|+2|**1**|
 |1|,|2|1,|**1**|1,2|**1**|,2|**1**|
 |1|-|2|1-|0|1-2|0|-2|**1**|
@@ -323,7 +323,7 @@ Now let's take a look at the effect after mixing characters and numbers:
 |1|\ |2|1\ |0|1\2|0|\2|**1**|
 |1|]|2|1]|0|1]2|0|]2|0|
 |1|^|2|1^|0|1^2|0|^2|0|
-|1|_|2|1_|0|1_2|0|_2|0|
+|1|\_|2|1\_|0|1\_2|0|\_2|0|
 |1|`|2|1`|0|1`2|0|`2|0|
 |1|a|2|1a|0|1a2|0|a2|0|
 |1|b|2|1b|0|1b2|0|b2|0|

@@ -194,7 +194,7 @@ select * from dbo.is_numeric
 |93|]|close square bracket|0|
 |94|^|power|0|
 |95|\_|underscore|0|
-|96|`|apostrophe|0|
+|96|\`|apostrophe|0|
 |97|a|a|0|
 |98|b|b|0|
 |99|c|c|0|
@@ -323,8 +323,8 @@ Now let's take a look at the effect after mixing characters and numbers:
 |1|\ |2|1\ |0|1\2|0|\2|**1**|
 |1|]|2|1]|0|1]2|0|]2|0|
 |1|^|2|1^|0|1^2|0|^2|0|
-|1| _ |2| 1_ |0|1_2|0| \_2 |0|
-|1|`|2|1`|0|1`2|0|`2|0|
+|1|\_|2|1\_|0|1\_2|0|\_2|0|
+|1|\`|2|1\`|0|1\`2|0|\`2|0|
 |1|a|2|1a|0|1a2|0|a2|0|
 |1|b|2|1b|0|1b2|0|b2|0|
 |1|c|2|1c|0|1c2|0|c2|0|

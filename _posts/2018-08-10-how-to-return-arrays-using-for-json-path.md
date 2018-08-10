@@ -2,7 +2,7 @@
 
 We will use the test data below for this post:
 
-````
+````sql
 create table dbo.country_city
 (
       country sysname
@@ -16,7 +16,7 @@ insert dbo.country_city values ('Australia', 'Melbourne'), ('Australia', 'Sydney
 
 This json format is the easiest to produce yet it consumes a lot more bytes than necessary due to the repeating column names.
 
-````
+````sql
 select city
 from dbo.country_city
 for json path, without_array_wrapper
@@ -28,7 +28,7 @@ Output: `{"city":"Melbourne"},{"city":"Sydney"},{"city":"Brisbane"}`
 
 I haven't been able to find a "for json" syntax that could produce the simple string array. In the end I had to rely on string_agg to manually craft the json string. 
 
-````
+````sql
 select concat('[', string_agg(concat('"', city, '"'), ','), ']')
 from dbo.country_city
 ````
@@ -39,7 +39,7 @@ Output: `["Melbourne","Sydney","Brisbane"]`
 
 This is a slight variation of the one above.
 
-````
+````sql
 select json_query(concat('[', string_agg(concat('"', city, '"'), ','), ']'), '$') as 'cities'
 from dbo.country_city
 for json path, without_array_wrapper
@@ -51,7 +51,7 @@ Output: `{"cities":["Melbourne","Sydney","Brisbane"]}`
 
 Again, building on top of the one above to produce a nested array.
 
-````
+````sql
 select country, json_query(concat('[', string_agg(concat('"', city, '"'), ','), ']'), '$') as 'cities'
 from dbo.country_city
 group by country

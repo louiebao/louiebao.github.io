@@ -86,7 +86,7 @@ when not matched then
 
 and that was no good either:
 
-```
+```sql
 Msg 11721, Level 15, State 1, Line 4
 NEXT VALUE FOR function cannot be used directly in a statement that uses a DISTINCT, UNION, UNION ALL, EXCEPT or INTERSECT operator.
 ```
@@ -106,7 +106,7 @@ select (next value for dbo.product_id_seq), 'C'
 
 and now if we were to insert product 'D' again:
 
-```
+```sql
 insert dbo.product(product_id, product_name)
 values (next value for dbo.product_id_seq, 'D')
 ```

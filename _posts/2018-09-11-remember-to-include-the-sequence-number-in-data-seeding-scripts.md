@@ -1,4 +1,4 @@
-# Include the SEQUENCE number in data seeding scripts
+# Remember to include the SEQUENCE number in data seeding scripts
 
 It is common knowledge that only one identity column can exist in a table. So what if you need to have another incrementing ID column in the same table? That's where the SEQUENCE object comes in handy.
 

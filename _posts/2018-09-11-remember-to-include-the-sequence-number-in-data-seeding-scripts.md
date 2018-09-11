@@ -4,7 +4,7 @@ It is common knowledge that only one identity column can exist in a table. So wh
 
 For example
 
-````sql
+```sql
 create table dbo.product
 (
       id            int           not null identity(1, 1)
@@ -18,25 +18,25 @@ as int
 start with 1
 increment by 1;
 go
-````
+```
 
 Before the SEQUENCE object was introduced, you'd had to query the table to find the max product_id and increment by 1.
 
-````sql
+```sql
 insert dbo.product(product_id, product_name)
 values ((select max(product_id) + 1 from dbo.product), 'test')
-````
+```
 
 But now, you can easily generate the next number without worrying about the last used ID:
 
-````sql
+```sql
 insert dbo.product(product_id, product_name)
 values (next value for dbo.product_id_seq, 'test')
-````
+```
 
 There is one catch though. Despite what you name the sequence object, it knows nothing about where or how the IDs are being used, so it is entirely up to the dev to control the usage of the IDs. I have once made a mistake in a data seeding script:
 
-````sql
+```sql
 ;with cte_source(product_id, product_name)
 as
 (
@@ -50,14 +50,14 @@ when not matched then
   insert (product_id, product_name)
   values (product_id, product_name)
 ;  
-````
+```
 
 I have prepopulated the dbo.product table with known IDs without thinking/realising that the sequence object was still defined to start at 1. Guess what would happen when product 'D' gets inserted into the table later on? 
 
-````sql
+```sql
 insert dbo.product(product_id, product_name)
 values (next value for dbo.product_id_seq, 'D')
-````
+```
 
 |id|product_id|product_name|
 |-|-|-|
@@ -68,7 +68,7 @@ values (next value for dbo.product_id_seq, 'D')
 
 Wow, luckily this was picked up in testing. The fix I put in was:
 
-````sql
+```sql
 ;with cte_source(product_id, product_name)
 as
 (
@@ -82,18 +82,18 @@ when not matched then
   insert (product_id, product_name)
   values (product_id, product_name)
 ;  
-````
+```
 
 and that was no good either:
 
-````
+```
 Msg 11721, Level 15, State 1, Line 4
 NEXT VALUE FOR function cannot be used directly in a statement that uses a DISTINCT, UNION, UNION ALL, EXCEPT or INTERSECT operator.
-````
+```
 
 OK, that made sense, the sequence needs to be generated one at a time. So I turned the merge statement into individual inserts:
 
-````sql
+```sql
 insert dbo.product(product_id, product_name)
 select (next value for dbo.product_id_seq), 'A'
 
@@ -102,14 +102,14 @@ select (next value for dbo.product_id_seq), 'B'
 
 insert dbo.product(product_id, product_name)
 select (next value for dbo.product_id_seq), 'C'
-````
+```
 
 and now if we were to insert product 'D' again:
 
-````
+```
 insert dbo.product(product_id, product_name)
 values (next value for dbo.product_id_seq, 'D')
-````
+```
 
 |id|product_id|product_name|
 |-|-|-|

@@ -6,7 +6,11 @@ There are two null settings in the a typical file load Data Flow task in a ssis 
 
 **Bulk Insert - Keep nulls** Specify whether the task should keep null values. The default value of this property is False.
 
-I have setup a quick test to show how the different settings can affect the load. The csv file looks like the one below, note the value for Tasmania is zero and I have intentionally left the Brisbane value as null/missing 
+I have setup a quick test to show how the different settings can affect the load. 
+
+[Flat File Load]({{ site.url }}/img/flat_file_load.png)
+
+The csv file looks like the one below, note the value for Tasmania is zero and I have intentionally left the Brisbane value as null/missing 
 
 ```
 Melbourne,5

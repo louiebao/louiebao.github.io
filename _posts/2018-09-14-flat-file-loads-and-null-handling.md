@@ -2,9 +2,9 @@
 
 There are two null settings in the a typical file load Data Flow task in a ssis package and I am always confused about the effects they have on the load.
 
-**Flat File Source Editor - Retain null values from the source as null values in the data flow** Specify whether to keep null values when data is extracted. The default value of this property is false. When this value is false, the Flat File source replaces null values from the source data with appropriate default values for each column, such as empty strings for string columns and zero for numeric columns.
+> **Flat File Source Editor - Retain null values from the source as null values in the data flow** Specify whether to keep null values when data is extracted. The default value of this property is false. When this value is false, the Flat File source replaces null values from the source data with appropriate default values for each column, such as empty strings for string columns and zero for numeric columns.
 
-**Bulk Insert - Keep nulls** Specify whether the task should keep null values. The default value of this property is False.
+> **Bulk Insert - Keep nulls** Specify whether the task should keep null values. The default value of this property is False.
 
 I have setup a quick test to show how the different settings can affect the load. 
 

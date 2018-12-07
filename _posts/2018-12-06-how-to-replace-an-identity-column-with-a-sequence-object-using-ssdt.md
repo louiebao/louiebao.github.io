@@ -47,7 +47,7 @@ I didn't realise at the time that the reset behaviour between _identity_ and _se
 
 What's not obvious is that by issuing `alter sequence with restart`, operations in the database will continue to work and sequence numbers will continue to go up UNTIL the next deployment. 
 
-At the time of the next deployment, SSDT will look at the model and the database and go, oh, the sequence object definition is different, let me generate a change script to match the model, gotcha!
+At the time of the next deployment, SSDT will look at the model and the database and go, oh, the sequence object definition is different, let me generate a change script to match the model. Gotcha!
 
 |Source|Definition|Change Script|
 |:--|:--|:--|

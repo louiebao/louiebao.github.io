@@ -45,21 +45,21 @@ I didn't realise at the time that the reset behaviour between identity and seque
 |dbcc checkident('dbo.application', reseed, 100)|1|100|101|
 |alter sequence dbo.application_id_sequence with restart 100|100|100|101|
 
-What's not obvious is that by using the `alter sequence with restart`, operations in the database will continue to work and sequence numbers will continue to go up UNTIL the next deployment. 
+What's not obvious is that by issuing `alter sequence with restart`, operations in the database will continue to work and sequence numbers will continue to go up UNTIL the next deployment. 
 
 At the time of the deployment, SSDT will look at the model and the database and go, oh, the sequence object definition is different, let me generate a change script to match the model.
 
-|Source|Definition|Change Script|Consequence|
-|:--|:--|:--|:--|
-|Model|start with 1|||
-|Database|start with 100|alter sequence dbo.application_id_sequence restart with 1|Duplicate sequence numbers will be generated|
+|Source|Definition|Change Script|
+|:--|:--|:--|
+|Model|start with 1||
+|Database|start with 100|alter sequence dbo.application_id_sequence restart with 1|
 
 See more discussions on the topic [here](https://feedback.azure.com/forums/908035-sql-server/suggestions/32897776-sequence-gets-reset-on-publish-from-ssdt-db-projec).
 
-Ok, so who do we do? I've decided to go for the **fast forward** approach:
+Ok, so who do we do? There are a few workarounds available for this problem, I've decided to go for the **fast forward** approach as it was easy to setup:
 
 ```sql
-declare @max_application_id int = (select max(application_id) from dbo.application)
+declare @max_application_id int = (select isnull(max(application_id), 0) from dbo.application)
 declare @current_value int = (select cast(current_value as int) from sys.sequences where name = 'application_id_sequence')
 
 while @current_value < @max_application_id
@@ -68,13 +68,19 @@ begin
     set @current_value = (select cast(current_value as int) from sys.sequences where name = 'application_id_sequence')
 end
 ```
-After running the script above, you will end up with a start_value that stays at 1, a current_value at 100 and the next value will continue from 101 and onwards.
+After running the script above, `select start_value, current_value from sys.sequences where name = 'application_id_sequence'` should show:
+
+|start_value|current_value|
+|:--|:--|
+|1|100|
+
+This means SSDT will now leave the sequence object alone. 
 
 **4. Add the fast forward script inside the PostDeployment script.**
 
 Instead of manually executing the fast forward script, we can simply add it to the project and execute it in the PostDeployment script.
 
-```sql
+```
 :r Scripts\fast_forward_sequence_number.sql
 ```
 

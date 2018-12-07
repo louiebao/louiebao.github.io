@@ -36,9 +36,9 @@ increment by 1;
 
 **3. Find a way to set the next value**
 
-When I was doing this for the first time, I naturally looked for a way to set the next value like how you would do it for the identity column using `dbcc checkident('dbo.application', reseed, 100)`, the only option I could find for the new sequence object was `alter sequence dbo.application_id_sequence with restart 100`.
+When I was doing this for the first time, I instinctively looked for a way to set the next value like how you would do it for the identity column using `dbcc checkident('dbo.application', reseed, 100)`, the only option I could find for the sequence object was `alter sequence dbo.application_id_sequence with restart 100`.
 
-I didn't realise at the time that the reset behaviour between identity and sequence is not the same. 
+I didn't realise at the time that the reset behaviour between _identity_ and _sequence_ is not exactly the same:
 
 |Reset Command|Start Value|Current Value|Next Value|
 |:--|:--|:--|:--|
@@ -47,7 +47,7 @@ I didn't realise at the time that the reset behaviour between identity and seque
 
 What's not obvious is that by issuing `alter sequence with restart`, operations in the database will continue to work and sequence numbers will continue to go up UNTIL the next deployment. 
 
-At the time of the deployment, SSDT will look at the model and the database and go, oh, the sequence object definition is different, let me generate a change script to match the model.
+At the time of the next deployment, SSDT will look at the model and the database and go, oh, the sequence object definition is different, let me generate a change script to match the model, gotcha!
 
 |Source|Definition|Change Script|
 |:--|:--|:--|

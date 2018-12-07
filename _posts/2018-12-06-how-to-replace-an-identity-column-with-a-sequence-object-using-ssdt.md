@@ -16,7 +16,7 @@ insert dbo.application default values
 go 100
 ```
 
-**1. Remove the identity property from the table script and rely on SSDT to generate the change script.**
+**1. Remove the identity property from the table script.**
 
 ```sql
 create table dbo.application

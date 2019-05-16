@@ -17,6 +17,6 @@ client = TinyTds::Client.new username: 'louie', password: 'louie', host: 'server
 result = client.execute('select db_name() as [database_name]')
 
 result.each do |row|
-    puts row[:database_name]
+    puts row['database_name']
 end
 ```

@@ -5,10 +5,10 @@
 2. Install TinyTDS gem.
 
     ```ruby
-    gem install tiny_tds
+    > gem install tiny_tds
     ```
 
-3. Test connection.
+3. Create a new ruby file: sql.rb.
 
     ```ruby
     require 'tiny_tds'
@@ -20,3 +20,9 @@
         puts row['database_name']
     end
     ```
+
+4. Test connection.
+    ```
+    > ruby sql.rb
+    ```
+    

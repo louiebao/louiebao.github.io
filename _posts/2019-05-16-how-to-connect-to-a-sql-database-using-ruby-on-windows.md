@@ -8,7 +8,7 @@
     > gem install tiny_tds
     ```
 
-3. Create a new ruby file: sql.rb.
+3. Create a new ruby file: sql.rb
 
     ```ruby
     require 'tiny_tds'

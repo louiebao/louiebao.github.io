@@ -1,6 +1,6 @@
 # How to connect a SQL database using Python on Windows
 
-1. Download and install python.
+1. [Download](https://www.python.org/downloads/) and install python.
 
 2. Install pyodbc.
     ```python

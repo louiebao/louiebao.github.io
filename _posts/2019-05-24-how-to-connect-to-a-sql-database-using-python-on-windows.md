@@ -19,7 +19,7 @@
         print(row)
     ```
     
-4. Test connection.
+4. Run.
     ```python
     > python sql.py
     ```

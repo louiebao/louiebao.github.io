@@ -1,0 +1,28 @@
+# How to connect a SQL database using Python on Windows
+
+1. Download and install python.
+
+2. Install pyodbc.
+    ```python
+    > pip install pyodbc
+    ```
+
+3. Create a new python file: sql.py
+    ```python
+    import pyodbc 
+
+    cnxn = pyodbc.connect('DRIVER={SQL Server};'
+                            'Server=servername;'
+                            'Database=louie;'
+                            'Trusted_Connection=yes;')
+    cursor = cnxn.cursor()
+
+    cursor.execute("select db_name() as [database_name];") 
+    for row in cursor:
+        print(row)
+    ```
+    
+4. Test connection.
+    ```python
+    > python sql.py
+    ```

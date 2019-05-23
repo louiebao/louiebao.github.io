@@ -11,10 +11,7 @@
     ```python
     import pyodbc 
 
-    cnxn = pyodbc.connect('DRIVER={SQL Server};'
-                            'Server=servername;'
-                            'Database=louie;'
-                            'Trusted_Connection=yes;')
+    cnxn = pyodbc.connect('DRIVER={SQL Server};Server=louie;Trusted_Connection=yes;')
     cursor = cnxn.cursor()
 
     cursor.execute("select db_name() as [database_name];") 
@@ -25,4 +22,9 @@
 4. Test connection.
     ```python
     > python sql.py
+    ```
+    
+5. Check output.    
+    ```
+    ('master', )
     ```

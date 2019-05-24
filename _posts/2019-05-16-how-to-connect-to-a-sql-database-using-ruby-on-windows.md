@@ -12,7 +12,7 @@
 
     ```ruby
     require 'tiny_tds'
-    client = TinyTds::Client.new username: 'louie', password: 'louie', host: 'servername', port: 1433, database: 'louie'
+    client = TinyTds::Client.new username: 'louie', password: 'louie', host: 'louie'
 
     result = client.execute('select db_name() as [database_name]')
 
@@ -21,8 +21,12 @@
     end
     ```
 
-4. Test connection.
+4. Run.
     ```
     > ruby sql.rb
     ```
     
+5. Check output.
+    ```
+    master
+    ```

@@ -19,15 +19,14 @@ how-to-connect-to-a-sql-database-using-nodejs-on-windows
     ```javascript
     var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'servername',  
+        server: 'louie',  
         authentication: { 
             options: { 
                 userName: 'louie', 
                 password: 'louie' 
             }, 
             type: 'default' 
-        },
-        options: { port: 1433, database: 'louie' }
+        }
     };  
 
     var connection = new Connection(config);  
@@ -36,7 +35,6 @@ how-to-connect-to-a-sql-database-using-nodejs-on-windows
         if (err) {
             console.log(err);
         } else {
-            console.log("Connected");
             executeStatement();		
         }
     });  
@@ -52,15 +50,20 @@ how-to-connect-to-a-sql-database-using-nodejs-on-windows
 
         request.on('row', columns => {  
             columns.forEach(column => {  
-                console.log("Database: " + column.value);
+                console.log(column.value);
             });
         });
 
         connection.execSql(request);  
     }
     ```
-5. Test connection.
+    
+5. Run.
     ```
     > node sql.js
     ```
     
+6. Check output.
+    ```
+    master
+    ```

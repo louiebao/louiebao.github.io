@@ -1,8 +1,11 @@
 # Using T-SQL to check against Benford's Law
 
 ### Benford's Law
-[Benford's law](https://en.wikipedia.org/wiki/Benford%27s_law), the law of the first-digit, is an observation about the frequency distribution of leading digits in many real-life sets of numerical data. Benford's Law could be used to detect accounting and expenses fraud. In the 2016 movie [The Accountant](https://en.wikipedia.org/wiki/The_Accountant_(2016_film)), Ben Affleck's character uses Benford's Law to expose the theft of funds from a robotics company.
+[Benford's law](https://en.wikipedia.org/wiki/Benford%27s_law), the law of the first-digit, is an observation about the frequency distribution of leading digits in many real-life sets of numerical data. Benford's Law could be used to detect accounting and expenses fraud. 
 
+In the 2016 movie [The Accountant](https://en.wikipedia.org/wiki/The_Accountant_(2016_film)), Ben Affleck's character uses Benford's Law to expose the theft of funds from a robotics company.
+
+### T-SQL
 You can use the code snippet below to check the distribution of your data set against Benford's Law. Just replace *dbo.num* and *amount* with your table and column names.
 
 ```sql

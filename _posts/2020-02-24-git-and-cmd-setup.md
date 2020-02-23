@@ -4,10 +4,11 @@
 
 ### Setup .gitconfig
 
+````
 [core]
   autocrlf = false # Check in and check out the files exactly as they are
-	ignorecase = true
-	sshCommand = "ssh -v"
+  ignorecase = true
+  sshCommand = "ssh -v"
 
 [alias]
     l = log \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
@@ -22,6 +23,7 @@
     dif = difftool --cached --dir-diff
 	  bdif = difftool --dir-diff
     sl = shortlog -e -s -n --all --no-merges   
+````
 
 ### Setup command prompt
 

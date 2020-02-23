@@ -11,18 +11,18 @@
   sshCommand = "ssh -v"
 
 [alias]
-    l = log \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
-    la = log --author="louie" \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
-    h = log --follow \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
-    f = show --name-status \"--format=%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --date=short
-    deleted = log --diff-filter=D --summary \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --date=short
+  l = log \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
+  la = log --author="louie" \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
+  h = log --follow \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --all --decorate --date=short
+  f = show --name-status \"--format=%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --date=short
+  deleted = log --diff-filter=D --summary \"--pretty=format:%C(yellow bold)%h %C(red bold)%ad %C(white bold)%an %C(reset)%s%C(cyan bold)%d\" --date=short
 
-    s = status
-    a = add -A
-    b = branch
-    dif = difftool --cached --dir-diff
-    bdif = difftool --dir-diff
-    sl = shortlog -e -s -n --all --no-merges   
+  s = status
+  a = add -A
+  b = branch
+  dif = difftool --cached --dir-diff
+  bdif = difftool --dir-diff
+  sl = shortlog -e -s -n --all --no-merges   
 ````
 
 ### Setup command prompt

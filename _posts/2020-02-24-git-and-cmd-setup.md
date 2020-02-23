@@ -21,7 +21,7 @@
     a = add -A
     b = branch
     dif = difftool --cached --dir-diff
-	  bdif = difftool --dir-diff
+    bdif = difftool --dir-diff
     sl = shortlog -e -s -n --all --no-merges   
 ````
 

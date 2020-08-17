@@ -1,8 +1,9 @@
 ### Generating arithmetic questions for young kids
 
-My kids are in primary school and in order to keep them occupied and stay away from the computer screens, each week I will generate a few pages of random maths questions for them to practise their arithmetic skills. I wanted to make this process as automated as possible so I don't need to spend time each week coming up with random questions. Below is an example how I achieved it using a bit of SQL and PowerShell.
+My kids are in primary school and in order to keep them occupied and stay away from the computer screens, each week I will generate a few pages of random maths questions for them to practise their arithmetic skills. I wanted to make this process as automated as possible so I don't need to spend time each week coming up with random questions. Below is an example of how I achieved it using a bit of SQL and PowerShell.
 
 **Step 1 - Setup**
+
 First I generated a pool of questions that contains all possible arithmetic (+-*/) combinations between 1 and 2048.
 
 ```sql
@@ -60,6 +61,7 @@ union all select '/', n1.n, n2.n	from number n1	cross join number n2 where n1.n 
 ```
 
 **Step 2 - Generate questions for the week**
+
 Each week I will generate a list of random questions for each child tailored to their skill levels.
 
 ```sql
@@ -124,6 +126,7 @@ select * from @output order by checksum(newid())
 ```
 
 **Step 3 - Print out the questions**
+
 I didn't want to manually copy the questions and print the output, so I automated this step as well.
 
 ```powershell

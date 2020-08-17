@@ -1,6 +1,6 @@
 ### Generating arithmetic questions for young kids
 
-My kids are in primary school and in order to keep them occupied and stay away from the computer screens, I generate a few pages of random maths questions for them each week to practise their arithmetic skills. I wanted to make this process as automated as possible so I don't need to spend time each week coming up with random questions. Below is an example how I achieved it using a bit of SQL and PowerShell.
+My kids are in primary school and in order to keep them occupied and stay away from the computer screens, each week I will generate a few pages of random maths questions for them to practise their arithmetic skills. I wanted to make this process as automated as possible so I don't need to spend time each week coming up with random questions. Below is an example how I achieved it using a bit of SQL and PowerShell.
 
 **Step 1 - Setup**
 First I generated a pool of questions that contains all possible arithmetic (+-*/) combinations between 1 and 2048.

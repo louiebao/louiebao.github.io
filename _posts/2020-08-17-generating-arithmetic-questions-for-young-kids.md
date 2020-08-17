@@ -2,10 +2,10 @@
 
 My kids are in primary school and in order to keep them occupied and stay away from the computer screens, I generate a few pages of random maths questions for them each week to practise their arithmetic skills. I wanted to make this process as automated as possible so I don't need to spend time each week coming up with random questions. Below is an example how I achieved it using a bit of SQL and PowerShell.
 
-** Step 1 - Setup **
+**Step 1 - Setup**
 First I generated a pool of questions that contains all possible arithmetic (+-*/) combinations between 1 and 2048.
 
-```
+```sql
 use louie
 
 drop table if exists dbo.number 
@@ -53,16 +53,16 @@ create table dbo.maths_question
 truncate table dbo.maths_question
 
 insert dbo.maths_question(operator, num1, num2)
-		  select '+', n1.n, n2.n	from number n1	cross join number n2
+          select '+', n1.n, n2.n	from number n1	cross join number n2
 union all select '-', n1.n, n2.n	from number n1	cross join number n2
 union all select '*', n1.n, n2.n	from number n1	cross join number n2
 union all select '/', n1.n, n2.n	from number n1	cross join number n2 where n1.n % n2.n = 0 -- Don't want any fractions.
 ```
 
-** Step 2 - Generate questions for the week**
+**Step 2 - Generate questions for the week**
 Each week I will generate a list of random questions for each child tailored to their skill levels.
 
-```
+```sql
 use louie
 
 declare @output table
@@ -123,10 +123,10 @@ order by checksum(newid())
 select * from @output order by checksum(newid())
 ```
 
-** Step 3 - Print out the questions **
+**Step 3 - Print out the questions**
 I didn't want to manually copy the questions and print the output, so I automated this step as well.
 
-```
+```powershell
 Param
 (
       [string]$child

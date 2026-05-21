@@ -4,7 +4,7 @@ I have been hearing about AI agents for some months now. Initially, it was just 
 
 Months later, I am no longer content with interacting with coding agents in the CLI. I started to wonder what it actually takes to put together an agent myself, like a “Hello World” app, but more functional than a simple chatbot.
 
-Objectives:
+**Objectives:**
 - Free
 - Lightweight
 - Fast to build

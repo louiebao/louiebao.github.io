@@ -67,7 +67,7 @@ ollama pull phi3:mini
 
 ## Step 3 – Create a local database
 
-We are data engineers right? Of course we will need a database.
+We are data engineers right? Of course we will need a database. SQLite was chosen as it is a lightweight, file-based database that comes with Python, so no additional installation is required.
 
 Copy and paste the python script below and save as setup_db.py:
 

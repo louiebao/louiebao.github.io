@@ -15,8 +15,6 @@ After a bit of tinkering, I got one working, and in doing so I learned something
 
 I wanted to mimic the experience of a new user, which is why I chose to build the agent using an old spare Mac. Therefore, the steps are intentionally beginner friendly. There is only one caveat: you will need to have Homebrew installed on your Mac first. If not, that will be your first challenge, go on, get it done, and then come back here.
 
----
-
 ## Step 1 – Install required software
 
 Use Homebrew to install Python and Ollama. I hope I don't need to explain why you'd need Python. Let's just say it is the coding/scripting language favoured by AI. Also, for an AI agent to work, it will need to talk to an AI model (aka LLM) and Ollama does just that. Remember, our goal is to build a simple agent quickly for learning purposes and not to become an AI infrastructure engineer.
@@ -45,13 +43,11 @@ Install a python package that we'll need later:
 pip3 install langchain-ollama
 ```
 
----
-
 ## Step 2 – Download an AI model using Ollama
 
 We've installed Ollama in the previous step, but it is just a soulless shell. It is time to inject it with intelligence. For that, we need to decide on an AI model that we will use for this exercise. Any will do, but given that I have a pretty old Mac, I opted for a lightweight model.
 
-In one terminal, run and keep this local ollama server running in the backgrounf:
+In one terminal, run and keep this local ollama server running in the background:
 
 ```bash
 ollama serve
@@ -62,8 +58,6 @@ Open a new terminal, run:
 ```bash
 ollama pull phi3:mini
 ```
-
----
 
 ## Step 3 – Create a local database
 
@@ -110,8 +104,6 @@ Run the script to setup the database:
 ```bash
 python3 setup_db.py
 ```
-
----
 
 ## Step 4 – Create the agent
 
@@ -162,8 +154,6 @@ while True:
         print("Error:", e)
 ```
 
----
-
 ## Step 5 – Run the agent
 
 Let the fun begin:
@@ -177,3 +167,9 @@ Try asking:
 
 To exit:
 > Ask: exit
+
+The core loop: user asks a question in plain English -> agent sends it to Ollama(phi3:mini) as a SQL-generation prompt -> LLM returns a SQL string -> agent strips noise -> agent executes it against sales.db -> agent prints results.
+
+## Summary
+Building an AI agent is not as hard as it may sound. I've demonstrated in 5 steps above that anyone can put together a working agent in 10 minutes. Hope this post sparked your interest to try it yourself.
+

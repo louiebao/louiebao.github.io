@@ -16,7 +16,6 @@ After a bit of tinkering, I got one working, and in doing so I learned something
 I wanted to mimic the experience of a new user, which is why I chose to build the agent using an old spare Mac. Therefore, the steps are intentionally beginner friendly. There is only one caveat: you will need to have Homebrew installed on your Mac first. If not, that will be your first challenge, go on, get it done, and then come back here.
 
 ## Step 1 – Install required software
-
 Use Homebrew to install Python and Ollama. I hope I don't need to explain why you'd need Python. Let's just say it is the coding/scripting language favoured by AI. Also, for an AI agent to work, it will need to talk to an AI model (aka LLM) and Ollama does just that. Remember, our goal is to build a simple agent quickly for learning purposes and not to become an AI infrastructure engineer.
 
 ```bash
@@ -44,7 +43,6 @@ pip3 install langchain-ollama
 ```
 
 ## Step 2 – Download an AI model using Ollama
-
 We've installed Ollama in the previous step, but it is just a soulless shell. It is time to inject it with intelligence. For that, we need to decide on an AI model that we will use for this exercise. Any will do, but given that I have a pretty old Mac, I opted for a lightweight model.
 
 In one terminal, run and keep this local ollama server running in the background:
@@ -60,7 +58,6 @@ ollama pull phi3:mini
 ```
 
 ## Step 3 – Create a local database
-
 We are data engineers right? Of course we will need a database. SQLite was chosen as it is a lightweight, file-based database that comes with Python, so no additional installation is required.
 
 Copy and paste the python script below and save as setup_db.py:
@@ -106,7 +103,6 @@ python3 setup_db.py
 ```
 
 ## Step 4 – Create the agent
-
 Finally, this is what we set out to do: building an AI agent. The magic happens in python where all the ingredients are mixed together. To make things more interesting, we want something more useful than a chatbot. How about using the agent to turn natural language into an SQL query and execute it against the database? How’s that for a data engineer's first AI agent?
 
 Copy and paste the python script below and save as agent.py:
@@ -155,7 +151,6 @@ while True:
 ```
 
 ## Step 5 – Run the agent
-
 Let the fun begin:
 
 ```bash
@@ -173,3 +168,12 @@ The core loop: user asks a question in plain English -> agent sends it to Ollama
 ## Summary
 Building an AI agent is not as hard as it may sound. I've demonstrated in 5 steps above that anyone can put together a working agent in 10 minutes. Hope this post sparked your interest to try it yourself.
 
+## A note for Windows users
+The code and Ollama commands are cross-platform, so most steps stay the same. The changes are all in the shell commands:
+
+| Mac (Homebrew)                | Windows (PowerShell)                          |
+|-------------------------------|-----------------------------------------------|
+| `brew install python ollama`  | `winget install Python.Python.3 Ollama.Ollama`|
+| `source venv/bin/activate`    | `.\venv\Scripts\Activate.ps1`                 |
+| `python3`                     | `python`                                      |
+| `pip3`                        | `pip`                                         |

@@ -4,6 +4,13 @@ I have been hearing about AI agents for some months now. Initially, it was just 
 
 Months later, I am no longer content with interacting with coding agents in the CLI. I started to wonder what it actually takes to put together an agent myself, like a “Hello World” app, but more functional than a simple chatbot.
 
+Objectives:
+- Free
+- Lightweight
+- Fast to build
+- No API keys, no accounts, no containers
+- Runs locally and does not connect to any external services
+
 After a bit of tinkering, I got one working, and in doing so I learned something I would never have learned had I not embarked on this journey. Below, I will share the steps for anyone, especially non-technical people to set up an AI agent themselves. Of course, the very first prototype is a long way from a real production grade agent, but the fun is real.
 
 I wanted to mimic the experience of a new user, which is why I chose to build the agent using an old spare Mac. Therefore, the steps are intentionally beginner friendly. There is only one caveat: you will need to have Homebrew installed on your Mac first. If not, that will be your first challenge, go on, get it done, and then come back here.
@@ -166,4 +173,7 @@ python3 agent.py
 ```
 
 Try asking:
-> What is the total sales?
+> Ask: what is the total sales
+
+To exit:
+> Ask: exit

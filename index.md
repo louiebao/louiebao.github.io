@@ -4,4 +4,4 @@
 {% endfor %}
 
 ---
-[All Posts]({{ "/posts" | relative_url }})
+[All Posts]({{ "/posts" | relative_url }}) | [All Posts]({{ "/foxi-tools" | relative_url }})

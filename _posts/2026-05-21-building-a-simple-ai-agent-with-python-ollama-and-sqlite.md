@@ -134,7 +134,7 @@ def run_sql(query):
         conn.close()
 
 while True:
-    q = input("\nAsk: ")
+    q = input("\nAsk (Type exit to stop): ")
     if q.lower() == "exit":
         break
 
@@ -158,12 +158,19 @@ python agent.py
 ```
 
 Try asking:
-> Ask: what is the total sales
+```bash
+Ask (Type exit to stop): what is the total sales
+```
 
-To exit:
-> Ask: exit
+and after a few seconds, you should receive the below response:
+```bash
+SQL:
+ SELECT SUM(amount) AS TotalSales FROM sales;
 
-The core loop: user asks a question in plain English -> agent sends it to Ollama(phi3:mini) as a SQL-generation prompt -> LLM returns a SQL string -> agent strips noise -> agent executes it against sales.db -> agent prints results.
+Result:
+ [(660.0,)] 
+```
+Congratulations! You just built a text to sql agent.
 
 ## Summary
 Building an AI agent is not as hard as it may sound. I've demonstrated in 5 steps above that anyone can put together a working agent in 10 minutes. Hope this post sparked your interest to try it yourself.

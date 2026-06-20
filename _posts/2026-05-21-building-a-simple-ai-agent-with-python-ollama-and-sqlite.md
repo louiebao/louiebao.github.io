@@ -25,21 +25,21 @@ brew install python ollama
 Check version:
 
 ```bash
-python3 --version
+python --version
 ollama --version
 ```
 
 Create a virtual environment for python:
 
 ```bash
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
 Install a python package that we'll need later:
 
 ```
-pip3 install langchain-ollama
+pip install langchain-ollama
 ```
 
 ## Step 2 – Download an AI model using Ollama
@@ -99,7 +99,7 @@ print("[sales] database created with sample data.")
 Run the script to setup the database:
 
 ```bash
-python3 setup_db.py
+python setup_db.py
 ```
 
 ## Step 4 – Create the agent
@@ -154,7 +154,7 @@ while True:
 Let the fun begin:
 
 ```bash
-python3 agent.py
+python agent.py
 ```
 
 Try asking:
@@ -175,5 +175,3 @@ The code and Ollama commands are cross-platform, so most steps stay the same. Th
 |-------------------------------|-----------------------------------------------|
 | `brew install python ollama`  | `winget install Python.Python.3 Ollama.Ollama`|
 | `source venv/bin/activate`    | `.\venv\Scripts\Activate.ps1`                 |
-| `python3`                     | `python`                                      |
-| `pip3`                        | `pip`                                         |

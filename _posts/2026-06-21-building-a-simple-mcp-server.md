@@ -4,7 +4,7 @@ MCP. Model Context Protocol. I understand every single word separately, but put 
 
 I am not someone who can fully grasp a new concept without actually getting my hands dirty first. How about we build a simple MCP server together and see what it actually does.
 
-This post builds on the sales database from the [previous post](/2026-05-21-building-a-simple-ai-agent-with-python-ollama-and-sqlite.md). If you do not have `sales.db` set up already, start there.
+This post builds on the sales database from the [previous post](/2026/05/21/building-a-simple-ai-agent-with-python-ollama-and-sqlite.html). If you do not have `sales.db` set up already, start there.
 
 ## Step 1 – Install required software
 
